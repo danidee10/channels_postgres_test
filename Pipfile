@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+daphne = "4.1.2"
+django = "5.2"
+channels = "4.2.2"
+channels-postgres = "1.1.1"
+
+[requires]
+python_version = "3.13"
+
+[scripts]
+runserver = "python manage.py runserver"
+runworker = "python manage.py runworker experiment"
+start_postgres = "docker run --rm --name channels_postgres_db -e POSTGRES_PASSWORD=password -e POSTGRES_DB=postgres -e POSTGRES_USER=postgres -p 5432:5432 postgres:17-alpine"
